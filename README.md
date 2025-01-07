@@ -8,7 +8,7 @@ An experiment I did to see if remapping inputs could improve touchpad dexterity 
 ## What it does
 It swaps Left-click input with Space bar, and Right-click with Shift. Chatting with space bar remapped would be really jarring, so it's just meant to be running while playing something.. that doesn't involve chatting.  Ctrl + C out of the script to return to normal. Give yourself a solid hour or two chance to acclimate.
 
-## My Thought Process
+## My thought process
 
 The issue with trackpads is that when you click, your movement is hindered. With mice, when you click, your movement is still controlled by your arm, wrist, or pinky and thumb.
 
