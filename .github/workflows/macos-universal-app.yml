@@ -1,0 +1,47 @@
+name: Build macOS Universal App
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        pip install pyobjc-framework-Quartz
+
+    - name: Build universal macOS app
+      run: |
+        # Create the app bundle with PyInstaller
+        pyinstaller jump_pad.py \
+          --onefile \
+          --windowed \
+          --name "Jump Pad" \
+          --target-arch universal2
+
+        # Update the app's Info.plist to reflect the correct display name
+        /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName 'Jump Pad'" dist/Jump\ Pad.app/Contents/Info.plist
+
+    - name: Upload macOS app
+      uses: actions/upload-artifact@v3
+      with:
+        name: JumpPad-macOS
+        path: dist/Jump\ Pad.app
