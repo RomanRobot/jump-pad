@@ -6,7 +6,7 @@ Touchpad FPS mode.
 An experiment I did to see if remapping inputs could improve touchpad dexterity for gaming.
 
 ## What it does
-It swaps left-click input with space bar, and right-click with shift.
+It swaps Left-click input with Space bar, and Right-click with Shift. Chatting with space bar remapped would be really jarring, so it's just meant to be running while playing something.. that doesn't involve chatting.  Ctrl + C out of the script to return to normal. Give yourself a solid hour or two chance to acclimate.
 
 ## My Thought Process
 
@@ -29,8 +29,6 @@ Right-click action with Shift
 Jump with one-finger click
 Start sprint with two-finger click
 
-Ask if they're on a laptop if a battery is detected, because there's a key map optimized for touchpad use. Tell me more - explain this reasoning
-
-Give it a solid hour or two
+Game integration: Ask if they're on a laptop if a battery is detected, because there's a key map optimized for touchpad use. Tell me more - explain this reasoning
 
 It's also tiring clicking unsupported so much with a hard touch pad and clicking so much in FPSs
