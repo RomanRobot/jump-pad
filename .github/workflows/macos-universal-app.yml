@@ -37,11 +37,22 @@ jobs:
           --name "Jump Pad" \
           --target-arch universal2
 
+        # Fix permissions for the app bundle
+        chmod -R 755 dist/Jump\ Pad.app
+        chmod +x dist/Jump\ Pad.app/Contents/MacOS/*
+
         # Update the app's Info.plist to reflect the correct display name
         /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName 'Jump Pad'" dist/Jump\ Pad.app/Contents/Info.plist
 
-    - name: Upload macOS app
-      uses: actions/upload-artifact@v3
+        # Sign the app to prevent macOS from blocking it
+        codesign --force --deep --sign - dist/Jump\ Pad.app
+
+        # Compress the .app into a .zip file
+        cd dist
+        zip -r Jump\ Pad.zip Jump\ Pad.app
+
+    - name: Upload macOS Universal App
+      uses: actions/upload-artifact@v4
       with:
         name: JumpPad-macOS
-        path: dist/Jump\ Pad.app
+        path: dist/Jump\ Pad.zip
