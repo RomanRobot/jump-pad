@@ -6,7 +6,13 @@ Touchpad FPS mode.
 An experiment I did to see if remapping inputs could improve touchpad dexterity for gaming.
 
 ## What it does
-It swaps Left-click input with Space bar, and Right-click with Shift. Chatting with space bar remapped would be really jarring, so it's just meant to be running while playing something.. that doesn't involve chatting.  Ctrl + C out of the script to return to normal. Give yourself a solid hour or two chance to acclimate.
+It swaps Left-click input with Space bar, and Right-click with Shift.
+
+## How to use
+1. `pip install pyobjc-framework-Quartz`
+1. `python3 jump_pad.py`
+
+Chatting with space bar remapped would be really jarring, so it's just meant to be running while playing something.. that doesn't involve chatting.  Ctrl + C out of the script to return to normal. Give yourself a solid hour or two chance to acclimate.
 
 ## My thought process
 
